@@ -1,0 +1,198 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "width": 820,
+  "height": 600,
+  "view": {
+    "stroke": "transparent"
+  },
+  "config": {
+    "font": "Proxima Regular"
+  },
+  "description": "Bump chart",
+  "data": {
+    "url": "data/hh_income_state_with_rank.csv"
+  },
+  "transform": [
+    {
+      "filter": "toDate(datum.date) > toDate('2000-01-01')"
+    },
+    {
+      "filter": "datum.income_rank < 12"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "point": {
+          "size": 150
+        },
+        "font": "Proxima Regular",
+        "color": "white",
+        "strokeWidth": 5
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal",
+          "title": null,
+          "axis": {
+            "labelFont": "Proxima Light",
+            "labelColor": "white",
+            "grid": false,
+            "labelFontSize": 18,
+            "tickCount": 5
+          }
+        },
+        "y": {
+          "field": "income_rank",
+          "type": "quantitative",
+          "sort": "descending",
+          "scale": {
+            "domain": [
+              1,
+              11
+            ]
+          },
+          "axis": {
+            "labelFont": "Proxima Light",
+            "labelColor": "white",
+            "titleColor": "white",
+            "grid": false,
+            "labelFontSize": 18,
+            "titleFontSize": 18,
+            "tickCount": 10,
+            "title": "Ranking",
+            "labelPadding": 10
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "date",
+            "type": "temporal",
+            "title": "Date"
+          },
+          {
+            "field": "income_rank",
+            "type": "quantitative",
+            "title": "Ranking"
+          },
+          {
+            "field": "income_mean",
+            "type": "quantitative",
+            "title": "Mean Income (RM)"
+          }
+        ],
+        "order": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "state",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Putrajaya",
+              "Kuala Lumpur",
+              "Selangor",
+              "Johor",
+              "Pulau Pinang"
+            ],
+            "range": [
+              "#6b53e4",
+              "#434da0",
+              "#8c53e4",
+              "#53b9e4",
+              "#53b9e4"
+            ]
+          },
+          "condition": [
+            {
+              "test": "datum['state'] != 'Johor' && datum['state'] != 'Selangor' && datum['state'] != 'Kuala Lumpur' && datum['state'] != 'Pulau Pinang' && datum['state'] != 'Putrajaya'",
+              "value": "#526179"
+            }
+          ],
+          "legend": null
+        },
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "value": 1
+          },
+          "value": 0.2
+        }
+      },
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "fields": [
+              "state"
+            ],
+            "on": "mouseover",
+            "clear": "mouseout"
+          }
+        }
+      ]
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 10,
+        "fontSize": 16,
+        "fontStyle": "italic"
+      },
+      "transform": [
+        {
+          "filter": "toDate(datum['date']) == toDate('2022-01-01') && datum['income_rank'] < 11"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "income_rank",
+          "type": "quantitative",
+          "sort": "descending",
+          "scale": {
+            "domain": [
+              1,
+              11
+            ]
+          }
+        },
+        "order": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "text": {
+          "field": "state",
+          "type": "nominal"
+        },
+        "color": {
+          "value": "white"
+        },
+        "opacity": {
+          "condition": [
+            {
+              "test": "toDate(datum['date']) == toDate('2022-01-01') && datum['income_rank'] < 11",
+              "value": 1
+            }
+          ],
+          "value": 0
+        }
+      }
+    }
+  ]
+}

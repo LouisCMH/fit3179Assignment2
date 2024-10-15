@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+
+    <link rel="preload" href="css/style.css" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="css/style.css">
+    </noscript>
+
+    <title>FIT3179 Assignment 2</title>
+</head>
+
+<body>
+    <div id="main">
+        <div class="section">
+            <div id="textOne">
+                <div class="sectionGap" id="startColumn">
+                    <div class="title">FINANCIAL GROWTH</div>
+                    <div id="titleTwo" class="subtitle">
+                        <div id="titleMalaysia">IN MALAYSIA: A Retrospective </div>
+                        <div id="box"></div>
+                    </div>
+                </div>
+                <div class="sectionGap bodyText start">
+                    Since it's inception, <b>Malaysia</b> has been gradually climbing the economical ladder through
+                    industry
+                    booms across many years.
+                </div>
+                <div class="sectionGap bodyText start">
+                    From its <b>early reliance on agriculture and natural resources</b> to becoming a major player in
+                    manufacturing and services,
+                    the country has <b>steadily diversified its economy</b>.
+                </div>
+                <div class="sectionGap bodyText start">
+                    As we explore the <b>nation's financial journey</b>, we’ll
+                    examine the factors that have shaped its <b>current economic landscape</b>.
+                </div>
+                <div class="sectionGap"></div>
+            </div>
+            <div id="mapContainer">
+                <div id="mapAnnotations">
+                </div>
+                <div id="choropleth_map">
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="vertical">
+
+                <div class="sectionGap lineHorizontal cross"></div>
+
+                <div class="horizontal space">
+                    <div class="vertical left">
+                        <div class="subtitle">POVERTY RATE CHANGE</div>
+                        <div class="bodyText" id="stateText">in selected states</div>
+                        <div id="poverty_graph"></div>
+                    </div>
+                    <div class="vertical right">
+                        <div class="rightText">
+                            <div class="sectionGap bodyText textRight wealthTextRight">
+                                <strong>From the 1980s to 2020</strong>, Significant decline in poverty rates was shown
+                                across Malaysian
+                                states like Johor, Selangor, Kuala Lumpur,
+                                and Pulau Pinang, <strong>reflecting the country’s economic growth and social
+                                    policies</strong>.
+                            </div>
+                            <div class="sectionGap bodyText textRight">
+                                However, the spike around 2020 <strong>marks the impact of the COVID-19
+                                    pandemic</strong>,
+                                which temporarily reversed progress.
+                            </div>
+                            <div class="sectionGap bodyText textRight">
+                                This highlights both the <strong>success in reducing poverty and the
+                                    vulnerabilities exposed during crises</strong>, underscoring the need for
+                                inclusive growth strategies moving forward.
+                            </div>
+                            <div class="sectionGap bodyText textRight">
+                                As the country continued its financial recovery, understanding how such
+                                events impact poverty <strong>ensures resilience that reaches
+                                    all segments of society.</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sectionGap cross"></div>
+                <div class="sectionGap lineHorizontal cross"></div>
+
+                <div class="horizontal space">
+                    <div class="vertical left">
+                        <div class="subtitle">FINANCIAL RANKING</div>
+                        <div class="bodyText" id="stateText">in Mean Income by States (2002-2022)</div>
+                        <div id="bump"></div>
+                    </div>
+                    <div class="vertical right">
+                        <div class="rightText wealthTextRight">
+                            <p>Looking at the mean income rankings of Malaysian states over 20 years,
+                                key trends in economic growth and regional disparities are shown.</p>
+
+                            <h3>Top Performers</h3>
+                            <ul>
+                                <li><strong>Putrajaya</strong>, <strong>Kuala Lumpur</strong>, and
+                                    <strong>Selangor</strong> dominate the rankings, driven by urbanization,
+                                    infrastructure, and diverse industries.
+                                </li>
+                            </ul>
+
+                            <h3>Mid-Level States</h3>
+                            <ul>
+                                <li><strong>Johor</strong> has consistently ranked 4th, benefiting from industrial
+                                    growth and proximity to Singapore.</li>
+                            </ul>
+
+                            <h3>Lower-Ranked States</h3>
+                            <ul>
+                                <li>States like <strong>Terengganu</strong>, <strong>Negeri Sembilan</strong>, and
+                                    <strong>Perak</strong> show more variability, reflecting less diversified economies
+                                    reliant on agriculture or natural resources.
+                                </li>
+                            </ul>
+
+                            <p>Regional income disparities plays a huge factor in deciding mean income, highlighting the
+                                need for balanced
+                                economic development to support growth across all states.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sectionGap cross"></div>
+                <div class="sectionGap lineHorizontal cross"></div>
+
+                <div class="horizontal space">
+                    <div class="vertical left">
+                        <div class="subtitle">GDP GROWTH PER YEAR</div>
+                        <div class="bodyText" id="stateText">by Sector (2016-2023)</div>
+                        <div id="heat"></div>
+                    </div>
+                    <div class="vertical right">
+                        <div class="rightText wealthTextRight">
+                            <ul id="heatText">
+                                <li><strong>Every sector</strong> faced a sharp decline in 2020 due to the pandemic,
+                                    followed by recovery.</li>
+                                <li><strong>Construction</strong> experienced significant volatility, with
+                                    mining hitting a <strong>-19.317%</strong> dip in 2020.</li>
+                                <li><strong>Manufacturing and Services</strong> showed resilience, recovering quickly
+                                    after 2020, driven by global trade and digital economy growth.</li>
+                                <li><strong>Construction</strong> was highly volatile, particularly impacted by pandemic
+                                    disruptions.</li>
+                                <li><strong>Import Duties</strong> spiked in 2017, reflecting changes in trade policies
+                                    or tariffs.</li>
+                            </ul>
+
+                            <p><strong>Malaysia has diversified their
+                                    economy</strong> to ensure sustainable growth, particularly by supporting strong
+                                sectors like <strong>services and manufacturing</strong> while addressing
+                                vulnerabilities in <strong>mining and construction</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sectionGap cross"></div>
+                <div class="sectionGap lineHorizontal cross"></div>
+
+                <div class="vertical left">
+                    <div class="subtitle">DEMOGRAPHIC OVERVIEW</div>
+                    <div class="bodyText" id="stateText">in selected states</div>
+                    <div id="pyramid_container" class="horizontal cross">
+                        <div class="vertical">
+                            <h2>Penang</h2>
+                            <div class="pyramid" id="pyramid_penang"></div>
+                            <ul class="pyramid_bullet">
+                                <li class="pyramid_point">
+                                    <strong>Aging population</strong> with fewer younger individuals.
+                                </li>
+                                <li class="pyramid_point">
+                                    <strong>Marginally higher</strong> working-age group (25-29).
+                                </li>
+                                <li class="pyramid_point">
+                                    <strong>Lower birth rates</strong>, highlighting the need for <strong>elder care planning</strong>.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="vertical">
+                            <h2>Kuala Lumpur</h2>
+                            <div class="pyramid" id="pyramid_kl"></div>
+                            <ul class="pyramid_bullet">
+                                <li class="pyramid_point">
+                                    Dominated by the <strong>30-44 age group</strong>, indicating a <strong>hub for middle-aged professionals</strong>.
+                                </li>
+                                <li class="pyramid_point">
+                                    Smaller younger and older populations.
+                                </li>
+                                <li class="pyramid_point">
+                                    Reflects a <strong>concentration of working individuals</strong>.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="vertical">
+                            <h2>Johor</h2>
+                            <div class="pyramid" id="pyramid_johor"></div>
+                            <ul class="pyramid_bullet">
+                                <li class="pyramid_point">
+                                    <strong>Balanced pyramid</strong> with strong working-age (20-29) and younger populations.
+                                </li>
+                                <li class="pyramid_point">
+                                    Sustainable workforce growth.
+                                </li>
+                                <li class="pyramid_point">
+                                    Well-positioned for future development with a <strong>balanced demographic structure</strong>.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sectionGap cross"></div>
+                <div class="sectionGap lineHorizontal cross"></div>
+
+                <div class="vertical">
+                    <div class="subtitle">SOURCE AND METADATA</div>
+                    <p>The following datasets have been used:</p>
+                    <ul>
+                        <li>
+                            Household Income by State (<a href="https://data.gov.my/data-catalogue/hh_income_state">link</a>) - Published by Department of Statistics Malaysia (DOSM) [Data as of 2022]
+                        </li>
+                        <li>
+                            Household Income by Administrative District (<a href="https://data.gov.my/data-catalogue/hh_income_district">link</a>) - Published by Department of Statistics Malaysia (DOSM) [Data as of 2022]
+                        </li>
+                        <li>
+                            Poverty by State (<a href="https://data.gov.my/data-catalogue/hh_poverty_state">link</a>) - Published by Department of Statistics Malaysia (DOSM) [Data as of 2022]
+                        </li>
+                        <li>
+                            Annual Real GDP by Economic Sector (<a href="https://data.gov.my/data-catalogue/gdp_annual_real_supply">link</a>) - Published by Department of Statistics Malaysia (DOSM) [Data as of 2023]
+                        </li>
+                        <li>
+                            Population Table: Malaysia (<a href="https://data.gov.my/data-catalogue/population_malaysia">link</a>) - Published by Department of Statistics Malaysia (DOSM) [Data as of 2024]
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>

@@ -1,0 +1,293 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "background": "transparent",
+    "description": "A population pyramid for Malaysia in 2022.",
+    "data": {
+        "url": "data/population_state.csv"
+    },
+    "transform": [
+        {
+            "filter": "datum.date == '2024-01-01'"
+        },
+        {
+            "filter": "datum.state == 'Kuala Lumpur'"
+        },
+        {
+            "filter": "datum.age != 'overall'"
+        },
+        {
+            "filter": "datum.ethnicity == 'overall'"
+        },
+        {
+            "calculate": "datum.sex == 'male' ? 'Male' : datum.sex == 'female' ? 'Female' : 'Both'",
+            "as": "gender"
+        }
+    ],
+    "spacing": 0,
+    "hconcat": [
+        {
+            "height": 450,
+            "width": 225,
+            "transform": [
+                {
+                    "filter": {
+                        "field": "gender",
+                        "equal": "Male"
+                    }
+                }
+            ],
+            "title": {
+                "text": "Male",
+                "color": "white"
+            },
+            "mark": {
+                "type": "bar",
+                "font": "Proxima Regular",
+                "color": "white"
+            },
+            "encoding": {
+                "y": {
+                    "field": "age",
+                    "axis": null,
+                    "sort": [
+                        "85+",
+                        "80-84",
+                        "75-79",
+                        "70-74",
+                        "65-69",
+                        "60-64",
+                        "55-59",
+                        "50-54",
+                        "45-49",
+                        "40-44",
+                        "35-39",
+                        "30-34",
+                        "25-29",
+                        "20-24",
+                        "15-19",
+                        "10-14",
+                        "5-9",
+                        "0-4"
+                    ]
+                },
+                "x": {
+                    "aggregate": "sum",
+                    "field": "population",
+                    "title": "Population (In thousands)",
+                    "axis": {
+                        "format": "s",
+                        "labelColor": "white",
+                        "titleColor": "white",
+                        "tickCount":5,
+                        "values": [0, 60, 120, 180, 240]
+                    },
+                    "sort": "descending",
+                    "scale": {
+                        "domain": [0,240]
+                    }
+                },
+                "color": {
+                    "field": "gender",
+                    "scale": {
+                        "range": [
+                            "#6b53e4",
+                            "#53b9e4"
+                        ]
+                    },
+                    "legend": null
+                },
+                "tooltip": [
+                    {
+                        "field": "state",
+                        "type": "nominal",
+                        "title": "State"
+                    },
+                    {
+                        "field": "gender",
+                        "type": "nominal",
+                        "title": "Gender"
+                    },
+                    {
+                        "field": "age",
+                        "type": "nominal",
+                        "title": "Age Group"
+                    },
+                    {
+                        "field": "population",
+                        "type": "quantitative",
+                        "title": "Population (In thousands)"
+                    }
+                ],
+                "opacity": {
+                  "condition": {
+                    "param": "hover",
+                    "value": 1
+                  },
+                  "value": 0.5
+                }
+            }
+        },
+        {
+            "height": 450,
+            "width": 40,
+            "view": {
+                "stroke": null
+            },
+            "mark": {
+                "type": "text",
+                "align": "center",
+                "font": "Proxima Regular",
+                "color": "white"
+            },
+            "encoding": {
+                "y": {
+                    "field": "age",
+                    "type": "ordinal",
+                    "axis": null,
+                    "sort": [
+                        "85+",
+                        "80-84",
+                        "75-79",
+                        "70-74",
+                        "65-69",
+                        "60-64",
+                        "55-59",
+                        "50-54",
+                        "45-49",
+                        "40-44",
+                        "35-39",
+                        "30-34",
+                        "25-29",
+                        "20-24",
+                        "15-19",
+                        "10-14",
+                        "5-9",
+                        "0-4"
+                    ]
+                },
+                "text": {
+                    "field": "age",
+                    "type": "ordinal"
+                }
+            }
+        },
+        {
+            "height": 450,
+            "width": 225,
+            "transform": [
+                {
+                    "filter": {
+                        "field": "gender",
+                        "equal": "Female"
+                    }
+                }
+            ],
+            "title": {
+                "text": "Female",
+                "color": "white"
+            },
+            "mark": {
+                "type": "bar",
+                "font": "Proxima Regular",
+                "color": "white"
+            },
+            "encoding": {
+                "y": {
+                    "field": "age",
+                    "title": null,
+                    "axis": null,
+                    "sort": [
+                        "85+",
+                        "80-84",
+                        "75-79",
+                        "70-74",
+                        "65-69",
+                        "60-64",
+                        "55-59",
+                        "50-54",
+                        "45-49",
+                        "40-44",
+                        "35-39",
+                        "30-34",
+                        "25-29",
+                        "20-24",
+                        "15-19",
+                        "10-14",
+                        "5-9",
+                        "0-4"
+                    ]
+                },
+                "x": {
+                    "aggregate": "sum",
+                    "field": "population",
+                    "title": "Population (In thousands)",
+                    "axis": {
+                        "format": "s",
+                        "labelColor": "white",
+                        "titleColor": "white",
+                        "tickCount":5,
+                        "values": [0, 60, 120, 180, 240]
+                    },
+                    "scale": {
+                        "domain": [0,240]
+                    }
+                },
+                "color": {
+                    "field": "gender",
+                    "legend": null
+                },
+                "tooltip": [
+                    {
+                        "field": "state",
+                        "type": "nominal",
+                        "title": "State"
+                    },
+                    {
+                        "field": "gender",
+                        "type": "nominal",
+                        "title": "Gender"
+                    },
+                    {
+                        "field": "age",
+                        "type": "nominal",
+                        "title": "Age Group"
+                    },
+                    {
+                        "field": "population",
+                        "type": "quantitative",
+                        "title": "Population (In thousands)"
+                    }
+                ],
+                "opacity": {
+                  "condition": {
+                    "param": "hover",
+                    "value": 1
+                  },
+                  "value": 0.5
+                }
+            }
+        }
+    ],
+    "config": {
+        "view": {
+            "stroke": null
+        },
+        "axis": {
+            "grid": false
+        },
+        "font": "Proxima Regular"
+    },
+    "params": [
+      {
+        "name": "hover",
+        "select": {
+          "type": "point",
+          "fields": [
+            "age", "gender"
+          ],
+          "on": "mouseover",
+          "clear": "mouseout"
+        }
+      }
+    ]
+}

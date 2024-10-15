@@ -1,0 +1,79 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "width": 900,
+  "height": 400,
+  "data": {
+    "url": "data/population_state.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "transform": [
+    {
+      "filter": "datum.date === '2022-01-01'"
+    },
+    {
+      "filter": "datum.sex === 'both'"
+    },
+    {
+      "filter": "datum.ethnicity === 'overall'"
+    },
+    {
+      "filter": "datum.age != 'overall'"
+    }
+  ],
+  "mark": "rect",
+  "encoding": {
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "axis": {
+        "labelFont": "Proxima Light",
+        "labelColor": "white"  ,
+        "grid":false,
+        "titleColor": "white",
+        "labelFontSize": 18,
+        "titleFontSize": 18
+      },
+      "title": "State"
+    },
+    "x": {
+      "field": "age",
+      "type": "ordinal",
+      "title": "Age Group",
+      "axis": {
+        "labelFont": "Proxima Light",
+        "labelColor": "white"  ,
+        "grid":false,
+        "titleColor": "white",
+        "labelFontSize": 18,
+        "titleFontSize": 18
+      },
+      "sort": ["0-4", "5-9", "10-14", "15-19", "20-24", "25-29", "30-34", "35-39", "40-44", "45-49", "50-54", "55-59", "60+"]
+    },
+    "color": {
+      "field": "population",
+      "type": "quantitative",
+      "scale": {"scheme": "blues"},
+      "title": "Population (,000)",
+      "legend": {
+        "labelFont": "Proxima Light",
+        "titleColor": "white",
+        "titleFontSize": 18,
+        "labelFontSize": 18,
+        "labelColor":"white"
+      }
+    },
+    "tooltip": [
+      {"field": "state", "title": "State"},
+      {"field": "age", "title": "Age Group"},
+      {"field": "population", "title": "Population (,000)"}
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"grid": false},
+    "font": "Proxima Regular"
+  }
+}

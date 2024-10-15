@@ -1,0 +1,298 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "width": 685,
+  "height": 500,
+  "data": {
+    "url": "data/gdp_annual_real_supply.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "date": "date:'%Y-%m-%d'"
+      }
+    }
+  },
+  "view": {
+    "stroke": "transparent"
+  },
+  "transform": [
+    {
+      "calculate": "datum['sector'] == 'p0' ? 'Overall' : datum['sector'] == 'p1' ? 'Agriculture' : datum['sector'] == 'p2' ? 'Mining & Quarrying' : datum['sector'] == 'p3' ? 'Manufacturing' : datum['sector'] == 'p4' ? 'Construction' : datum['sector'] == 'p5' ? 'Services' : 'Import Duties'",
+      "as": "sector_name"
+    },
+    {
+      "calculate": "toDate(datum.date)",
+      "as": "parsed_date"
+    }
+  ],
+  "layer": [
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "parsed_date",
+          "type": "temporal",
+          "timeUnit": "year",
+          "title": null,
+          "axis": {
+            "labelFont": "Proxima Light",
+            "labelColor": "white",
+            "grid": false,
+            "labelFontSize": 24,
+            "tickCount": 8,
+            "labelAlign": "center",
+            "labelOffset": 45,
+            "values": [
+              2016,
+              2017,
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023
+            ]
+          }
+        },
+        "y": {
+          "field": "sector_name",
+          "type": "ordinal",
+          "sort": [
+            "Overall",
+            "Agriculture",
+            "Mining & Quarrying",
+            "Manufacturing",
+            "Construction",
+            "Services",
+            "Import Duties"
+          ],
+          "axis": {
+            "labelFont": "Proxima Light",
+            "labelColor": "white",
+            "titleColor": "white",
+            "grid": false,
+            "labelFontSize": 24,
+            "titleFontSize": 18,
+            "tickCount": 10,
+            "title": null,
+            "labelPadding": 10
+          }
+        },
+        "color": {
+          "field": "value",
+          "type": "quantitative",
+          "title": "Growth (%)",
+          "scale": {
+            "domain": [
+              -20,
+              -2,
+              0,
+              2,
+              20
+            ],
+            "range": [
+              "#e44a4a",
+              "#f5d6d3",
+              "#f9f9f9",
+              "#d9d7ef",
+              "#4363e4"
+            ]
+          },
+          "legend": {
+            "labelFont": "Proxima Light",
+            "titleColor": "white",
+            "titleFontSize": 18,
+            "labelFontSize": 18,
+            "labelColor": "white"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "parsed_date",
+            "type": "temporal",
+            "title": "Date"
+          },
+          {
+            "field": "sector_name",
+            "type": "nominal",
+            "title": "Sector"
+          },
+          {
+            "field": "value",
+            "type": "quantitative",
+            "title": "Growth (%)"
+          }
+        ],
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "value": 1
+          },
+          "value": 0.8
+        }
+      },
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "fields": [
+              "sector_name",
+              "parsed_date"
+            ],
+            "on": "mouseover",
+            "clear": "mouseout"
+          }
+        }
+      ]
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 24,
+        "fontStyle": "italic",
+        "dx": 42
+      },
+      "transform": [],
+      "encoding": {
+        "x": {
+          "field": "parsed_date",
+          "type": "temporal",
+          "timeUnit": "year"
+        },
+        "y": {
+          "field": "sector_name",
+          "type": "ordinal",
+          "sort": [
+            "Overall",
+            "Agriculture",
+            "Mining & Quarrying",
+            "Manufacturing",
+            "Construction",
+            "Services",
+            "Import Duties"
+          ]
+        },
+        "text": {
+          "field": "value",
+          "type": "quantitative"
+        },
+        "color": {
+          "value": "black"
+        },
+        "opacity": {
+          "condition": [
+            {
+              "test": "datum['value'] > 11.99 || datum['value'] < -9.99",
+              "value": 1
+            }
+          ],
+            "value": 0
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "black",
+        "strokeWidth": 3,
+        "fill": "transparent",
+        "align": "center",
+        "baseline": "middle"
+      },
+      "encoding": {
+        "x": {
+          "field": "parsed_date",
+          "type": "temporal",
+          "timeUnit": "year"
+        },
+        "y": {
+          "field": "sector_name",
+          "type": "ordinal",
+          "sort": [
+            "Overall",
+            "Agriculture",
+            "Mining & Quarrying",
+            "Manufacturing",
+            "Construction",
+            "Services",
+            "Import Duties"
+          ]
+        },
+        "opacity": {
+          "condition": [
+            {
+              "test": "datum['value'] > 11.99 || datum['value'] < -9.99",
+              "value": 1
+            }
+          ],
+            "value": 0
+        },
+        "stroke": {
+          "field": "value",
+          "type": "quantitative",
+          "scale": {
+            "domain": [-20, 0, 20],
+            "range": ["#812a2a", "#f9f9f9", "#1e2c65"]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 24,
+        "fontStyle": "italic",
+        "dy": -50,
+        "dx": 42
+      },
+      "transform": [],
+      "encoding": {
+        "x": {
+          "field": "parsed_date",
+          "type": "temporal",
+          "timeUnit": "year"
+        },
+        "y": {
+          "field": "sector_name",
+          "type": "ordinal",
+          "sort": [
+            "Overall",
+            "Agriculture",
+            "Mining & Quarrying",
+            "Manufacturing",
+            "Construction",
+            "Services",
+            "Import Duties"
+          ]
+        },
+        "text": {
+          "value": "The start of COVID-19"
+        },
+        "color": {
+          "value": "white"
+        },
+        "opacity": {
+          "condition": [
+            {
+              "test": "datum['sector_name'] == 'Overall' && datum['value'] < -3.99",
+              "value": 1
+            }
+          ],
+            "value": 0
+        }
+      }
+    }
+  ],
+  "config": {
+    "axis": {
+      "grid": false
+    },
+    "font": "Proxima Regular"
+  }
+}

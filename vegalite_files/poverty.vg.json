@@ -1,0 +1,155 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "width": 900,
+  "height": 600,
+  "view": {
+    "stroke": "transparent"
+  },
+  "config": {
+    "font": "Proxima Regular"
+  },
+  "data": {
+    "url": "data/hh_poverty_state.csv"
+  },
+  "transform": [],
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "font": "Proxima Regular",
+        "color": "white",
+        "interpolate": "monotone",
+        "strokeWidth": 4
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal",
+          "axis": {
+            "labelFont": "Proxima Light",
+            "labelColor": "white",
+            "grid": false,
+            "titleColor": "white",
+            "labelFontSize": 18,
+            "titleFontSize": 18,
+            "tickCount": 5,
+            "title": null
+          }
+        },
+        "y": {
+          "field": "poverty_absolute",
+          "type": "quantitative",
+          "axis": {
+            "labelFont": "Proxima Light",
+            "labelColor": "white",
+            "grid": false,
+            "titleColor": "white",
+            "labelFontSize": 18,
+            "titleFontSize": 18,
+            "tickCount": 5,
+            "title": "Absolute Poverty (%)"
+          }
+        },
+        "color": {
+          "field": "state",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Johor",
+              "Selangor",
+              "Kuala Lumpur",
+              "Pulau Pinang"
+            ],
+            "range": [
+              "#6b53e4",
+              "#434da0",
+              "#8c53e4",
+              "#53b9e4"
+            ]
+          },
+          "legend": {
+            "offset": -170,
+            "labelFont": "Proxima Light",
+            "titleColor": "white",
+            "title": "States",
+            "titleFontSize": 30,
+            "labelFontSize": 26,
+            "labelColor": "white",
+            "symbolSize": 500
+          },
+          "condition": [
+            {
+              "test": "datum['state'] != 'Johor' && datum['state'] != 'Selangor' && datum['state'] != 'Kuala Lumpur' && datum['state'] != 'Pulau Pinang'",
+              "value": "white"
+            }
+          ]
+        },
+        "opacity": {
+          "condition": [
+            {
+              "test": "datum['state'] != 'Johor' && datum['state'] != 'Selangor' && datum['state'] != 'Kuala Lumpur' && datum['state'] != 'Pulau Pinang'",
+              "value": 0.2
+            }
+          ],
+          "value": 1
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 20,
+        "fontStyle": "italic",
+        "dy":-20
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal",
+          "axis": {
+            "labelFont": "Proxima Light",
+            "labelColor": "white",
+            "grid": false,
+            "titleColor": "white",
+            "labelFontSize": 18,
+            "titleFontSize": 18,
+            "tickCount": 5,
+            "title": null
+          }
+        },
+        "y": {
+          "field": "poverty_absolute",
+          "type": "quantitative",
+          "axis": {
+            "labelFont": "Proxima Light",
+            "labelColor": "white",
+            "grid": false,
+            "titleColor": "white",
+            "labelFontSize": 18,
+            "titleFontSize": 18,
+            "tickCount": 5,
+            "title": "Absolute Poverty (%)"
+          }
+        },
+        "text": {
+          "value": "Start of COVID-19"
+        },
+        "color": {
+          "value": "white"
+        },
+        "opacity": {
+          "condition":[
+            {
+              "test":"datum.state == 'Kelantan' && datum.poverty_absolute == '21.2'",
+              "value":1
+            }
+          ],
+          "value":0
+        }
+      }
+    }
+  ]
+}

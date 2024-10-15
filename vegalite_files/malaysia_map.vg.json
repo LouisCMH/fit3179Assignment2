@@ -1,0 +1,154 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "width": 700,
+  "height": 1000,
+  "view": {
+    "stroke": "transparent"
+  },
+  "projection": {
+    "type": "equalEarth"
+  },
+  "config": {
+    "font": "Proxima Regular"
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "topojson/my_administrative.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "mys_admbnda_adm2_unhcr_20210211"
+        }
+      },
+      "transform": [
+        {
+          "lookup": "properties.ADM2_EN",
+          "from": {
+            "data": {
+              "url": "data/hh_income_district.csv"
+            },
+            "key": "district",
+            "fields": [
+              "income_mean",
+              "income_median",
+              "date"
+            ]
+          }
+        },
+        {
+          "lookup": "properties.ADM1_EN",
+          "from": {
+            "data": {
+              "url": "data/hh_income_state.csv"
+            },
+            "key": "state",
+            "fields": [
+              "state_income_mean",
+              "state_income_median",
+              "state_date"
+            ]
+          }
+        },
+        {
+          "filter": "datum.date === '2022-01-01'"
+        },
+        {
+          "calculate": "datum.income_mean",
+          "as": "District Mean Income (RM)"
+        },
+        {
+          "calculate": "datum.income_median",
+          "as": "District Median Income (RM)"
+        },
+        {
+          "calculate": "datum.state_income_mean",
+          "as": "State Mean Income (RM)"
+        },
+        {
+          "calculate": "datum.state_income_median",
+          "as": "State Median Income (RM)"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#28243D",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "color": {
+          "field": "District Mean Income (RM)",
+          "type": "quantitative",
+          "scale": {
+            "type": "log",
+            "scheme": "darkblue",
+            "range": [
+              "#00ffdd",
+              "#564263"
+            ]
+          },
+          "legend": {
+            "labelColor": "white",
+            "titleColor": "white",
+            "orient": "top-right",
+            "labelFont": "Proxima Light",
+            "title": "Mean Income (RM)",
+            "titleFontSize": 18,
+            "labelFontSize": 16,
+            "gradientLength": 250,
+            "tickCount":2,
+            "values":[3000,13673]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "properties.ADM1_EN",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "State Mean Income (RM)",
+            "type": "quantitative"
+          },
+          {
+            "field": "State Median Income (RM)",
+            "type": "quantitative"
+          },
+          {
+            "field": "properties.ADM2_EN",
+            "type": "nominal",
+            "title": "District"
+          },
+          {
+            "field": "District Mean Income (RM)",
+            "type": "quantitative"
+          },
+          {
+            "field": "District Median Income (RM)",
+            "type": "quantitative"
+          }
+        ],
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "value": 1
+          },
+          "value": 0.5
+        }
+      },
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "fields": [
+              "properties.ADM2_EN"
+            ],
+            "on": "mouseover",
+            "clear": "mouseout"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+@font-face {
+    font-family: "Proxima Black";
+    src: url("fonts/Proxima Nova Black.otf");
+}
+
+@font-face {
+    font-family: "Proxima Light";
+    src: url("fonts/Proxima Nova Alt Light.otf");
+}
+
+@font-face {
+    font-family: "Proxima Thin";
+    src: url("fonts/Proxima Nova Thin.otf");
+}
+
+@font-face {
+    font-family: "Proxima Regular";
+    src: url("fonts/ProximaNova-Regular.otf");
+}
+
+@font-face {
+    font-family: "Proxima Bold";
+    src: url("fonts/Proxima Nova Bold.otf");
+}
+
+@font-face {
+    font-family: "PTSerif Bold";
+    src: url("fonts/PTSerif-Bold.ttf");
+}
+
+
+/* Font */
+
+body {
+    background-color: #28243D;
+    color: white;
+    font-size:16px;
+    font-family: "Proxima Regular";
+}
+
+.title {
+    font-family: "PTSerif Bold";
+    font-size: 4.5em;
+    color:rgb(195, 241, 195);
+}
+
+.subtitle {
+    font-family: "Proxima Thin";
+    font-size: 3em;
+}
+
+.bodyText {
+    font-family: "Proxima Regular";
+    font-size: 1.8em;
+	white-space: wrap;
+}
+
+h3 {
+    font-family: "Proxima Thin";
+    font-size: 1.8em;
+}
+
+li {
+    font-family: "Proxima Regular";
+    font-size: 1.6em;
+	white-space: wrap;
+}
+
+p {
+    font-size: 1.6em;
+}
+
+ul {
+    margin-top: -2em;
+}
+
+#vg-tooltip-element {
+    font-family: "Proxima Regular";
+    font-size: 1.2em;
+}
+
+strong {
+    color: #c3f1c3;
+    font-weight: bold;
+}
+
+b {
+    color: rgb(195, 241, 195);
+    font-weight: bold;
+}
+
+/**/
+
+.start {
+    width: 20em;
+}
+
+#main {
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: 100%;
+    height: fit-content;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Section 1 */
+
+.section {
+    width:92%;
+    height: 1060px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding:2em 4em 2em 4em;
+}
+
+.sectionGap {
+    margin-bottom: 1.5em;
+}
+
+#textOne {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#titleTwo {
+    display:flex;
+    width:inherit;
+}
+
+#titleMalaysia {
+    margin-top:-0.4em;
+    margin-right:0.2em;
+}
+
+#box {
+    background-color: white;
+    flex-grow: 1;
+    margin-top:-0.2em;
+    height:0.3em;
+}
+
+#poverty_graph {
+    margin-left:-1.8em;
+    margin-top:1em;
+}
+
+.lineHorizontal {
+    height:5px;
+    background-image: linear-gradient(to bottom right, rgba(246, 252, 246, 0.8), rgba(195, 241, 195,0.8));
+    z-index: 3;
+    border-radius: 1em;
+}
+
+.cross {
+    width:100%;
+}
+
+.vertical {
+    height: fit-content;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.horizontal {
+    height: inherit;
+    display:flex;
+    flex-direction: row;
+}
+
+#stateText {
+    margin-top: -0.4em;
+}
+
+#demographic_heatmap {
+    margin-block: 2em;
+}
+
+#mapContainer {
+    display:flex;
+    width:60em;
+    justify-content: center;
+}
+
+#mapAnnotations {
+    height: 1060px;
+    width: 960px;
+    background-image: url('../static/map_anno.png');
+    z-index: 2;
+    position:absolute;
+    pointer-events:none;
+}
+
+#bump, #heat, .pyramid {
+    margin: 1em;
+}
+
+.pyramid {
+    margin-top:-1em;
+}
+
+.left {
+    align-items: start !important;
+}
+
+.right {
+    align-items: end !important;
+}
+
+#pyramid_container {
+    justify-content: space-evenly;
+}
+
+.space {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.wealthTextRight {
+    margin-top:3em;
+    margin-left: 2em;
+}
+
+.wealthTextLeft {
+    margin-top:3em;
+    margin-right: 2em;
+}
+
+.textRight {
+    text-align: right;
+}
+
+#heatText {
+    margin-top:4.5em !important;
+}
+
+.pyramid_bullet {
+    margin-top: 0.2em;
+    width:80%;
+}
+
+.pyramid_point {
+    margin-top: 0.4em;
+}

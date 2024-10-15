@@ -1,0 +1,184 @@
+state,district,date,income_mean,income_median
+Johor,Batu Pahat,2019-01-01,7392,6504
+Johor,Batu Pahat,2022-01-01,7419,6347
+Johor,Johor Bahru,2019-01-01,9315,7342
+Johor,Johor Bahru,2022-01-01,9869,8232
+Johor,Kluang,2019-01-01,5953,4933
+Johor,Kluang,2022-01-01,6461,5204
+Johor,Kota Tinggi,2019-01-01,6982,5475
+Johor,Kota Tinggi,2022-01-01,7529,6227
+Johor,Kulai,2019-01-01,8602,7536
+Johor,Kulai,2022-01-01,9177,7460
+Johor,Ledang,2019-01-01,6659,5561
+Johor,Ledang,2022-01-01,7093,5622
+Johor,Mersing,2019-01-01,4937,3896
+Johor,Mersing,2022-01-01,5426,4445
+Johor,Muar,2019-01-01,7540,5963
+Johor,Muar,2022-01-01,7572,5724
+Johor,Pontian,2019-01-01,6776,5585
+Johor,Pontian,2022-01-01,6913,5616
+Johor,Segamat,2019-01-01,6431,5595
+Johor,Segamat,2022-01-01,6578,5318
+Kedah,Baling,2019-01-01,4313,3583
+Kedah,Baling,2022-01-01,4263,3400
+Kedah,Bandar Baharu,2019-01-01,4959,4022
+Kedah,Bandar Baharu,2022-01-01,4565,3922
+Kedah,Kota Setar,2019-01-01,5773,4532
+Kedah,Kota Setar,2022-01-01,5959,4751
+Kedah,Kuala Muda,2019-01-01,5656,4247
+Kedah,Kuala Muda,2022-01-01,5624,4200
+Kedah,Kubang Pasu,2019-01-01,6291,4814
+Kedah,Kubang Pasu,2022-01-01,6221,5201
+Kedah,Kulim,2019-01-01,5476,4489
+Kedah,Kulim,2022-01-01,5636,4498
+Kedah,Langkawi,2019-01-01,6737,5905
+Kedah,Langkawi,2022-01-01,6087,5250
+Kedah,Padang Terap,2019-01-01,4781,3722
+Kedah,Padang Terap,2022-01-01,4858,3902
+Kedah,Pendang,2019-01-01,4680,3765
+Kedah,Pendang,2022-01-01,4986,3801
+Kedah,Pokok Sena,2019-01-01,5046,4246
+Kedah,Pokok Sena,2022-01-01,5494,4668
+Kedah,Sik,2019-01-01,4960,4094
+Kedah,Sik,2022-01-01,5053,3703
+Kedah,Yan,2019-01-01,4397,3502
+Kedah,Yan,2022-01-01,4637,4080
+Kelantan,Bachok,2019-01-01,4728,3621
+Kelantan,Bachok,2022-01-01,4811,3625
+Kelantan,Gua Musang,2019-01-01,4009,2942
+Kelantan,Gua Musang,2022-01-01,4473,3342
+Kelantan,Jeli,2019-01-01,3872,2943
+Kelantan,Jeli,2022-01-01,3735,2906
+Kelantan,Kecil Lojing,2019-01-01,3002,3138
+Kelantan,Kecil Lojing,2022-01-01,3153,2630
+Kelantan,Kota Bharu,2019-01-01,5577,4171
+Kelantan,Kota Bharu,2022-01-01,5693,4330
+Kelantan,Kuala Krai,2019-01-01,3979,2896
+Kelantan,Kuala Krai,2022-01-01,3798,2763
+Kelantan,Machang,2019-01-01,4841,3708
+Kelantan,Machang,2022-01-01,4987,3429
+Kelantan,Pasir Mas,2019-01-01,4745,3341
+Kelantan,Pasir Mas,2022-01-01,4602,3508
+Kelantan,Pasir Puteh,2019-01-01,4688,3458
+Kelantan,Pasir Puteh,2022-01-01,4712,3453
+Kelantan,Tanah Merah,2019-01-01,4338,3166
+Kelantan,Tanah Merah,2022-01-01,4177,2991
+Kelantan,Tumpat,2019-01-01,4838,3500
+Kelantan,Tumpat,2022-01-01,4741,3749
+Melaka,Alor Gajah,2019-01-01,7050,5907
+Melaka,Alor Gajah,2022-01-01,7235,5611
+Melaka,Jasin,2019-01-01,7340,5640
+Melaka,Jasin,2022-01-01,7145,5895
+Melaka,Melaka Tengah,2019-01-01,8100,6250
+Melaka,Melaka Tengah,2022-01-01,8593,6557
+Negeri Sembilan,Jelebu,2019-01-01,5414,3976
+Negeri Sembilan,Jelebu,2022-01-01,4445,3636
+Negeri Sembilan,Jempol,2019-01-01,4926,3676
+Negeri Sembilan,Jempol,2022-01-01,4848,3830
+Negeri Sembilan,Kuala Pilah,2019-01-01,5040,3587
+Negeri Sembilan,Kuala Pilah,2022-01-01,4509,3471
+Negeri Sembilan,Port Dickson,2019-01-01,6393,4959
+Negeri Sembilan,Port Dickson,2022-01-01,6054,4805
+Negeri Sembilan,Rembau,2019-01-01,5163,4135
+Negeri Sembilan,Rembau,2022-01-01,5544,4655
+Negeri Sembilan,Seremban,2019-01-01,7611,5599
+Negeri Sembilan,Seremban,2022-01-01,7900,6384
+Negeri Sembilan,Tampin,2019-01-01,5786,4332
+Negeri Sembilan,Tampin,2022-01-01,5097,4012
+Pahang,Bentong,2019-01-01,5300,4220
+Pahang,Bentong,2022-01-01,5563,4691
+Pahang,Bera,2019-01-01,4566,3636
+Pahang,Bera,2022-01-01,4567,3866
+Pahang,Cameron Highlands,2019-01-01,6576,5729
+Pahang,Cameron Highlands,2022-01-01,6265,5221
+Pahang,Jerantut,2019-01-01,4452,3781
+Pahang,Jerantut,2022-01-01,4537,3781
+Pahang,Kuantan,2019-01-01,7071,5654
+Pahang,Kuantan,2022-01-01,6938,5926
+Pahang,Lipis,2019-01-01,4504,3646
+Pahang,Lipis,2022-01-01,4959,4115
+Pahang,Maran,2019-01-01,4678,3671
+Pahang,Maran,2022-01-01,5036,4319
+Pahang,Pekan,2019-01-01,5026,4092
+Pahang,Pekan,2022-01-01,4780,4053
+Pahang,Raub,2019-01-01,5005,3805
+Pahang,Raub,2022-01-01,5445,4375
+Pahang,Rompin,2019-01-01,4641,3579
+Pahang,Rompin,2022-01-01,5103,4148
+Pahang,Temerloh,2019-01-01,5205,4173
+Pahang,Temerloh,2022-01-01,5180,4283
+Perak,Bagan Datuk,2019-01-01,5705,4503
+Perak,Bagan Datuk,2022-01-01,5160,4076
+Perak,Batang Padang,2019-01-01,5637,4067
+Perak,Batang Padang,2022-01-01,5178,3953
+Perak,Hilir Perak,2019-01-01,4783,3484
+Perak,Hilir Perak,2022-01-01,5203,4199
+Perak,Hulu Perak,2019-01-01,4554,3532
+Perak,Hulu Perak,2022-01-01,4891,3467
+Perak,Kampar,2019-01-01,4845,3821
+Perak,Kampar,2022-01-01,5087,4347
+Perak,Kerian,2019-01-01,5532,4512
+Perak,Kerian,2022-01-01,5276,3996
+Perak,Kinta,2019-01-01,6120,4556
+Perak,Kinta,2022-01-01,6308,5037
+Perak,Kuala Kangsar,2019-01-01,5156,3875
+Perak,Kuala Kangsar,2022-01-01,5176,3813
+Perak,Larut Dan Matang,2019-01-01,5364,4345
+Perak,Larut Dan Matang,2022-01-01,5400,4029
+Perak,Manjung,2019-01-01,6137,4636
+Perak,Manjung,2022-01-01,6318,5135
+Perak,Muallim,2019-01-01,5488,3915
+Perak,Muallim,2022-01-01,6122,5015
+Perak,Perak Tengah,2019-01-01,5390,4097
+Perak,Perak Tengah,2022-01-01,5956,4564
+Perak,Selama,2022-01-01,4439,3673
+Perlis,Perlis,2019-01-01,5476,4594
+Perlis,Perlis,2022-01-01,5664,4713
+Pulau Pinang,Barat Daya,2019-01-01,8393,6576
+Pulau Pinang,Barat Daya,2022-01-01,9254,7247
+Pulau Pinang,S.P.Selatan,2019-01-01,6843,5797
+Pulau Pinang,S.P.Selatan,2022-01-01,7472,6231
+Pulau Pinang,S.P. Tengah,2019-01-01,7457,5849
+Pulau Pinang,S.P. Tengah,2022-01-01,8056,6220
+Pulau Pinang,S.P. Utara,2019-01-01,6914,5566
+Pulau Pinang,S.P. Utara,2022-01-01,7330,6103
+Pulau Pinang,Timur Laut,2019-01-01,8493,6902
+Pulau Pinang,Timur Laut,2022-01-01,8727,6714
+Selangor,Gombak,2019-01-01,11536,8501
+Selangor,Gombak,2022-01-01,13523,10180
+Selangor,Klang,2019-01-01,9980,7888
+Selangor,Klang,2022-01-01,10278,8203
+Selangor,Kuala Langat,2019-01-01,8375,6950
+Selangor,Kuala Langat,2022-01-01,11048,10093
+Selangor,Kuala Selangor,2019-01-01,7866,5855
+Selangor,Kuala Selangor,2022-01-01,9410,7644
+Selangor,Petaling,2019-01-01,12145,8993
+Selangor,Petaling,2022-01-01,12760,9618
+Selangor,Sabak Bernam,2019-01-01,6042,4454
+Selangor,Sabak Bernam,2022-01-01,6930,5533
+Selangor,Sepang,2019-01-01,12254,8937
+Selangor,Sepang,2022-01-01,13673,12608
+Selangor,Ulu Langat,2019-01-01,10252,8361
+Selangor,Ulu Langat,2022-01-01,13386,11210
+Selangor,Ulu Selangor,2019-01-01,7598,6249
+Selangor,Ulu Selangor,2022-01-01,8779,7678
+Terengganu,Besut,2019-01-01,5819,4527
+Terengganu,Besut,2022-01-01,6285,4743
+Terengganu,Dungun,2019-01-01,7564,6044
+Terengganu,Dungun,2022-01-01,7902,6356
+Terengganu,Hulu Terengganu,2019-01-01,5363,4368
+Terengganu,Hulu Terengganu,2022-01-01,5821,5090
+Terengganu,Kemaman,2019-01-01,7854,6592
+Terengganu,Kemaman,2022-01-01,8381,6425
+Terengganu,Kuala Nerus,2019-01-01,7647,6730
+Terengganu,Kuala Nerus,2022-01-01,7983,6800
+Terengganu,Kuala Terengganu,2019-01-01,6691,5614
+Terengganu,Kuala Terengganu,2022-01-01,7109,5872
+Terengganu,Marang,2019-01-01,5928,5060
+Terengganu,Marang,2022-01-01,6357,5291
+Terengganu,Setiu,2019-01-01,5600,4231
+Terengganu,Setiu,2022-01-01,6030,5211
+Kuala Lumpur,Kuala Lumpur,2019-01-01,13257,10549
+Kuala Lumpur,Kuala Lumpur,2022-01-01,13325,10234
+Putrajaya,Putrajaya,2019-01-01,12840,9983
+Putrajaya,Putrajaya,2022-01-01,13473,10056
